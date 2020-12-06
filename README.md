@@ -1,0 +1,1 @@
+# Ghana-Elections-2020
