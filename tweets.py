@@ -108,14 +108,12 @@ if __name__ == "__main__":
         #f.write("username, tweet,created_at,favorite_count,retweet_count,reply_count,sentiments\n")
        f.write("name, username, tweet,created_at,hashtags, sentiments, polarity\n")
 
-
-
-    stream.filter(track=['@ECGhanaOfficial', '@NAkufoAddo','@JDMahama','#ghanaelections2020', '#LetTheCitizenKnow', '#GhanaElections',
-     '#4More4Nana', '#JohnMahama2020', '#votenumber2']) #insert keywords for Twitter search
-
-
     while True:
-    #sleep 
-        time.sleep(2)
+        try:
+            stream.filter(track=['@ECGhanaOfficial', '@NAkufoAddo','@JDMahama','#ghanaelections2020', '#LetTheCitizenKnow', '#GhanaElections',
+            '#4More4Nana', '#JohnMahama2020', '#votenumber2']) #insert keywords for Twitter search
+        except tweepy.TweepError as e:
+            time.sleep(360)
+            continue
 
 
